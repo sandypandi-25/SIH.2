@@ -88,6 +88,8 @@ def predict():
     except Exception as e:
         print(f"Unexpected error: {e}")
         return jsonify({"error": f"Unexpected error: {str(e)}"}), 500
-
+@app.route('/',methods=['GET'])
+def helloWorld():
+    return jsonify({"status":"Working"})
 if __name__ == '__main__':
     app.run(port=5000)
